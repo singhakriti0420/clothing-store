@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Product Detail | MH24</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+
+        <div>
+            <a href="{% url 'favourites' %}">
+                <i class="fa-solid fa-heart"></i>
+                <span id="fav-count">0</span>
+            </a>
+
+            <a href="{% url 'cart' %}">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="product-detail-page">
+
+        <div class="detail-left">
+            {% if product.image %}
+               <img src="{{ product.image.url }}" width="300">
+            {% endif %}
+        </div>
+
+        <div class="detail-right">
+
+            <h2>{{ product.name }}</h2>
+            <h3>₹{{ product.price }}</h3>
+            <p>{{ product.description }}</p>
+
+            <div class="size-section">
+                <p>Select Size:</p>
+
+                <div class="sizes">
+                    <span onclick="selectSize(this)">S</span>
+                    <span onclick="selectSize(this)">M</span>
+                    <span onclick="selectSize(this)">L</span>
+                    <span onclick="selectSize(this)">XL</span>
+                </div>
+            </div>
+
+            <div class="qty-section">
+                <button onclick="changeQtyDetail(-1)">−</button>
+                <span id="detail-qty">1</span>
+                <button onclick="changeQtyDetail(1)">+</button>
+            </div>
+
+            <button id="detail-add-btn" class="add-btn" onclick="addToCartFromDetail()">
+                ADD TO BAG
+            </button>
+
+            <button id="detail-fav-btn" class="fav-btn">
+                <i id="fav-icon" class="fa-regular fa-heart"></i> Add to Favourite
+            </button>
+
+        </div>
+
+    </section>
+
+    <script src="{% static 'js/products.js' %}"></script>
+    <script src="{% static 'js/cart.js' %}"></script>
+    <script src="{% static 'js/favourites.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

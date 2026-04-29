@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Men | MH24 Collection</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <section class="category-hero">
+    <h1>MEN COLLECTION</h1>
+    <p>Street Essentials. Everyday Drip.</p>
+  </section>
+
+  <section class="products">
+    <div class="product-grid" id="product-grid">
+      <!-- Products will load dynamically -->
+    </div>
+  </section>
+
+  <!-- ✅ FIXED STATIC JS PATHS -->
+  <script src="{% static 'store/js/products.js' %}"></script>
+  <script src="{% static 'store/js/cart.js' %}"></script>
+  <script src="{% static 'store/js/favourites.js' %}"></script>
+  <script src="{% static 'store/js/main.js' %}"></script>
+
+</body>
+
+</html>

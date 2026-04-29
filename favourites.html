@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Favorites | MH24 Collection</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="nav-left">
+            <h2 class="logo"></h2>
+        </div>
+
+        <div class="nav-center">
+            <a href="index.html" class="border">Home</a>
+        </div>
+
+        <div class="nav-right">
+
+            <a href="favourites.html" class="nav-favourites border">
+                <i class="fa-solid fa-heart"></i>
+                <span id="fav-count">0</span>
+            </a>
+
+            <a href="cart.html" class="nav-cart border">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count">0</span>
+            </a>
+
+            <span id="username"></span>
+
+            <a href="#" onclick="logout()" class="border">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </a>
+
+        </div>
+
+    </header>
+
+    <hr>
+
+    <section class="category-hero">
+        <h1>YOUR FAVORITES</h1>
+    </section>
+
+    <section class="products">
+        <div class="product-grid favourites-container">
+        </div>
+    </section>
+
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+    <script src="favourites.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>

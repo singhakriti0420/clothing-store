@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>MH24 Collection | Streetwear</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+<header>
+
+    <div class="navbar">
+
+      <!-- LOGO -->
+      <div class="nav-logo">
+        <a href="index.html">
+          <div class="logo"></div>
+        </a>
+      </div>
+
+      <!-- LOCATION -->
+      <div class="nav-address">
+        <p class="add-first">Deliver to</p>
+
+        <div class="add-icon">
+          <i class="fa-solid fa-location-dot"></i>
+          <p class="add-second">INDIA</p>
+        </div>
+      </div>
+
+      <!-- SEARCH -->
+      <div class="nav-search">
+
+        <input 
+          type="text" 
+          id="searchInput"
+          placeholder="Search MH24Collection"
+          class="search-input"
+          onkeyup="searchProducts()"
+          onkeydown="goToSearch(event)">
+          
+
+        <button class="search-icon" onclick="goToSearch(event)">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+
+      </div>
+
+      <!-- ACCOUNT -->
+       
+     <div class="nav-signin border">
+        <a href="signin.html">
+          <p><span>Hello, Sign in</span></p>
+        </a>
+      </div>
+
+    
+      <!-- SHOP -->
+      <div class="nav-favourites border">
+        <a href="products.html">
+          Shop
+        </a>
+      </div>
+
+      <!-- FAVOURITES -->
+      <div class="nav-favourites border">
+        <a href="favourites.html">
+          <i class="fa-solid fa-heart"></i>
+          (<span id="fav-count">0</span>)
+        </a>
+      </div>
+
+      <!-- CART -->
+      <div class="nav-cart border">
+        <a href="cart.html">
+          <i class="fa-solid fa-cart-shopping"></i>
+          Cart (<span id="cart-count">0</span>)
+        </a>
+      </div>
+
+      <!-- profile -->
+        <div class="nav-profile border">
+          <a href="profile.html">
+            <i class="fa-solid fa-user"></i>
+          </a>
+        </div>
+
+      <!-- HOME BUTTON -->
+      <div class="top-btn">
+      <a href="index.html">
+          <i class="fa-solid fa-house"></i>
+      </a>
+      </div>
+
+      <!-- LOGOUT BUTTON -->
+      <div class="nav-logout">
+          <span id="username"></span>
+          <button onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </button>
+     </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ================= HERO SECTION ================= -->
+
+  <section class="hero-section">
+
+    <div class="slider">
+
+      <img src="images/HERO.FINAL1.png" class="slide active">
+      <img src="images/heroslide1.png" class="slide">
+      <img src="images/Herodenim.png" class="slide">
+
+    </div>
+
+    <div class="hero-msg">
+      SHOP YOUR EVERYDAY FIT
+    </div>
+
+  </section>
+
+
+  <!-- ================= CATEGORIES ================= -->
+
+  <section class="categories">
+
+    <h2>DRIP BY CATEGORY</h2>
+
+    <div class="category-container">
+
+      <a href="Men.html" class="category-card">
+
+        <img src="images/men.png">
+
+        <div class="overlay">
+          <h3>MEN</h3>
+          <p>Street Essentials</p>
+        </div>
+
+      </a>
+
+      <a href="women.html" class="category-card">
+
+        <img src="images/women.png">
+
+        <div class="overlay">
+          <h3>WOMEN</h3>
+          <p>Soft but Savage</p>
+        </div>
+
+      </a>
+
+      <a href="oversized.html" class="category-card">
+
+        <img src="images/oversized.png">
+
+        <div class="overlay">
+          <h3>OVERSIZED</h3>
+          <p>Chill Fits Only</p>
+        </div>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= BEST SELLERS ================= -->
+
+ <section class="featured">
+
+  <h2 class="section-title">BEST SELLERS</h2>
+
+  <div class="product-container" id="product-container">
+    <!-- Products will load from backend -->
+  </div>
+
+</section>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <!-- ABOUT -->
+      <div class="footer-section">
+
+        <h3>About MH24Collection</h3>
+
+        <p>
+          Why blend in when you are born to stand out.
+          Shop premium streetwear today.
+        </p>
+
+      </div>
+
+
+      <!-- SHOP -->
+      <div class="footer-section">
+
+        <h3>Shop</h3>
+
+        <ul>
+          <li><a href="products.html">All Products</a></li>
+          <li><a href="Men.html">Men</a></li>
+          <li><a href="women.html">Women</a></li>
+        </ul>
+
+      </div>
+
+
+      <!-- SUPPORT -->
+      <div class="footer-section">
+
+        <h3>Support</h3>
+
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Shipping</a></li>
+        </ul>
+
+      </div>
+
+
+      <!-- SOCIAL -->
+      <div class="footer-section">
+
+        <h3>Follow</h3>
+
+        <div class="social-icons">
+
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-twitter"></i>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+      © 2026 MH24Collection. All Rights Reserved.
+    </div>
+
+  </footer>
+
+
+
+
+  <script src="js/products.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/favourites.js" defer></script>
+  <script src="js/search.js" defer></script>
+  <script src="js/slider.js" defer></script>
+  <script src="js/main.js" defer></script>
+
+  <!-- ✅ PASTE THIS HERE -->
+  <script>
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (user) {
+        document.getElementById("username").innerText = user.name;
+    } else {
+        document.getElementById("username").innerText = "Guest";
+    }
+
+    async function logout() {
+        await fetch("http://127.0.0.1:8000/api/logout/", {
+            method: "POST",
+            credentials: "include"
+        });
+
+        localStorage.removeItem("user");
+        window.location.href = "signin.html";
+    }s
+  </script>
+
+</body>
+</html>
+
