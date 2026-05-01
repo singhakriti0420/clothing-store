@@ -1,5 +1,24 @@
 let products = [];
 
+const localProductImageMap = {
+    "Classic Black T-Shirt": "images/blacktee1.png.png",
+    "White Casual Shirt": "images/whitetee.png",
+    "Navy Blue Hoodie": "images/hoodie.png",
+    "Black Denim Jeans": "images/blacktee1.png.png",
+    "Women's White T-Shirt": "images/whitetee.png",
+    "Women's Pink Hoodie": "images/hoodie.png",
+    "Women's Black Dress": "images/red-removebg-preview.png",
+    "Women's Blue Jeans": "images/whitetee.png",
+    "Oversized Brown T-Shirt": "images/brown.png",
+    "Oversized Gray Hoodie": "images/graphictee.png",
+    "Oversized Black Sweater": "images/blacktee1.png.png",
+    "Oversized Beige Shirt": "images/loose shirt.png"
+};
+
+function getLocalImage(name) {
+    return localProductImageMap[name] || "images/blacktee1.png.png";
+}
+
 /* =========================
    GET CATEGORY FROM URL
 ========================= */
@@ -40,7 +59,7 @@ if (category) {
         id: item.id,
         name: item.name,
         price: item.price,
-        img: item.image,
+        img: item.image || getLocalImage(item.name),
         desc: item.description
     }));
 
@@ -49,6 +68,27 @@ if (category) {
     renderProducts();
 })
 .catch(error => console.error(error));
+
+function renderProducts() {
+    const container = document.getElementById("product-container");
+    if (!container) return;
+
+    container.innerHTML = products.map(product => `
+        <div class="product-card" onclick="openDetail(${product.id})">
+            <img src="${product.img}" alt="${product.name}" onerror="this.onerror=null;this.src='images/blacktee1.png.png';">
+            <h3>${product.name}</h3>
+            <p>₹${product.price}</p>
+            <div class="product-actions">
+                <button class="add-btn" onclick="addToCart(${product.id}, event)">Add to Cart</button>
+                <button class="fav-btn" onclick="toggleFav(event, ${product.id})">
+                    <i class="fa-regular fa-heart fav-icon" data-id="${product.id}"></i>
+                </button>
+            </div>
+        </div>
+    `).join("");
+
+    if (typeof checkFavIcons === "function") checkFavIcons();
+}
 
 
 /* =========================

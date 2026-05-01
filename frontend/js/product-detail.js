@@ -1,3 +1,22 @@
+const localProductImageMap = {
+    "Classic Black T-Shirt": "images/blacktee1.png.png",
+    "White Casual Shirt": "images/whitetee.png",
+    "Navy Blue Hoodie": "images/hoodie.png",
+    "Black Denim Jeans": "images/blacktee1.png.png",
+    "Women's White T-Shirt": "images/whitetee.png",
+    "Women's Pink Hoodie": "images/hoodie.png",
+    "Women's Black Dress": "images/red-removebg-preview.png",
+    "Women's Blue Jeans": "images/whitetee.png",
+    "Oversized Brown T-Shirt": "images/brown.png",
+    "Oversized Gray Hoodie": "images/graphictee.png",
+    "Oversized Black Sweater": "images/blacktee1.png.png",
+    "Oversized Beige Shirt": "images/loose shirt.png"
+};
+
+function getLocalImage(name) {
+    return localProductImageMap[name] || "images/blacktee1.png.png";
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
 
   if (!window.location.href.includes("product-detail.html")) return;
@@ -19,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       id: data.id,
       name: data.name,
       price: data.price,
-      img: "http://127.0.0.1:8000" + data.image,
+      img: data.image || getLocalImage(data.name),
       desc: data.description
     };
 

@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,16 +20,22 @@
   </section>
 
   <section class="products">
-    <div class="product-grid" id="product-grid">
+    <div class="product-grid" id="product-container">
       <!-- Products will load dynamically -->
     </div>
   </section>
 
-  <!-- ✅ FIXED STATIC JS PATHS -->
-  <script src="{% static 'store/js/products.js' %}"></script>
-  <script src="{% static 'store/js/cart.js' %}"></script>
-  <script src="{% static 'store/js/favourites.js' %}"></script>
-  <script src="{% static 'store/js/main.js' %}"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    if (!params.get("category")) {
+      window.location.search = "?category=Men";
+    }
+  </script>
+
+  <script src="js/products.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/favourites.js" defer></script>
+  <script src="js/main.js" defer></script>
 
 </body>
 

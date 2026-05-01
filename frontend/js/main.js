@@ -99,33 +99,10 @@ function loadNavbarUser() {
 
 }
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    fetch("http://127.0.0.1:8000/api/products/")
-        .then(res => res.json())
-        .then(data => {
-
-            const container = document.getElementById("product-container");
-            container.innerHTML = "";
-
-            data.forEach(product => {
-
-                container.innerHTML += `
-                    <div class="product-card">
-                        <img src="${product.image}" alt="${product.name}">
-                        <h3>${product.name}</h3>
-                        <p>₹${product.price}</p>
-                        <small>${product.category}</small>
-                    </div>
-                `;
-
-            });
-
-        })
-        .catch(err => {
-            console.log("Product load error:", err);
-        });
-
+window.addEventListener("DOMContentLoaded", function () {
+  const username = document.getElementById("username");
+  if (username) {
+    const user = JSON.parse(localStorage.getItem("user"));
+    username.innerText = user?.name || "Guest";
+  }
 });
-</script>

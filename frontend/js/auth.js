@@ -1,23 +1,25 @@
 /* ================= AUTH SYSTEM ================= */
 
-// LOGOUT
 function logout() {
-  localStorage.removeItem("loggedInUser");
+  localStorage.removeItem("user");
   window.location.href = "signin.html";
 }
 
-// SIGNUP
-function signup() {
+function logoutUser() {
+  logout();
+}
+
+function registerUser() {
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
 
   if (!name || !email || !password) {
-    alert("Fill all fields");
+    alert("Please fill all fields");
     return false;
   }
 
-  let users = JSON.parse(localStorage.getItem("users")) || [];
+  const users = JSON.parse(localStorage.getItem("users")) || [];
 
   if (users.find(user => user.email === email)) {
     alert("User already exists");
@@ -28,9 +30,7 @@ function signup() {
 
   users.push(newUser);
   localStorage.setItem("users", JSON.stringify(users));
-
-  // 🔥 Auto login after signup
-  localStorage.setItem("loggedInUser", JSON.stringify(newUser));
+  localStorage.setItem("user", JSON.stringify(newUser));
 
   alert("Signup successful 🎉");
   window.location.href = "index.html";
@@ -38,23 +38,19 @@ function signup() {
   return false;
 }
 
-// SIGNIN
-function signin() {
+function loginUser() {
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
 
-  let users = JSON.parse(localStorage.getItem("users")) || [];
-
-  const valid = users.find(user =>
-    user.email === email && user.password === password
-  );
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const valid = users.find(user => user.email === email && user.password === password);
 
   if (!valid) {
     alert("Invalid email or password ❌");
     return false;
   }
 
-  localStorage.setItem("loggedInUser", JSON.stringify(valid));
+  localStorage.setItem("user", JSON.stringify(valid));
 
   alert("Login successful ✅");
   window.location.href = "index.html";

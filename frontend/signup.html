@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | MH24 Collection</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="signup-page">
+
+<div class="signup-box">
+
+    <h2>Create Account</h2>
+
+    <!-- NAME -->
+    <input type="text" id="name" placeholder="Full Name" required>
+
+    <!-- EMAIL -->
+    <input type="email" id="email" placeholder="Email Address" required>
+
+    <!-- PASSWORD -->
+    <input type="password" id="password" placeholder="Password" required>
+
+    <!-- BUTTON -->
+    <button class="signup-btn" onclick="registerUser()">
+        Sign Up
+    </button>
+
+    <a href="signin.html" class="login-link">
+        Already have an account? Login
+    </a>
+
+</div>
+
+<script src="js/auth.js" defer></script>
+
+</body>
+</html>

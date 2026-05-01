@@ -16,12 +16,12 @@
     <div class="navbar">
 
         <a href="index.html">
-            <img src="newlogo-removebg-preview.png" height="40">
+            <img src="newlogo-removebg-preview.png" height="40" alt="MH24Collection logo">
         </a>
 
         <div class="nav-right">
 
-            <a href="shop.html">Shop</a>
+            <a href="products.html">Shop</a>
             <a href="cart.html">Cart</a>
 
             <a href="profile.html">
@@ -45,7 +45,9 @@
         <!-- LEFT -->
         <div class="profile-left">
 
-            <img src="user.png" class="profile-pic">
+            <div class="profile-pic profile-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
 
             <h2 id="profile-name">User</h2>
             <p id="profile-email">user@email.com</p>
@@ -81,18 +83,9 @@
         document.getElementById("profile-name2").innerText = user.name;
         document.getElementById("profile-email2").innerText = user.email;
     }
-
-    // ================= LOGOUT =================
-    async function logoutUser() {
-        await fetch("http://127.0.0.1:8000/api/logout/", {
-            method: "POST",
-            credentials: "include"
-        });
-
-        localStorage.removeItem("user");
-        window.location.href = "signin.html";
-    }
 </script>
+
+<script src="js/auth.js" defer></script>
 
 </body>
 </html>

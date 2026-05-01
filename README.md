@@ -21,7 +21,7 @@ This is a complete clothing store e-commerce platform featuring:
 #### 1. Clone the Repository
 ```bash
 git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd frontend
+cd YOUR_REPO
 ```
 
 #### 2. Create Virtual Environment
@@ -79,37 +79,39 @@ frontend/
 │   ├── db.sqlite3                   # SQLite database
 │   ├── manage.py                    # Django CLI
 │   └── requirements.txt             # Python dependencies
-├── js/                              # JavaScript files
-│   ├── main.js                      # Main app logic
-│   ├── auth.js                      # Authentication handler
-│   ├── cart.js                      # Shopping cart functionality
-│   ├── products.js                  # Product listing
-│   ├── product-detail.js            # Product detail page
-│   ├── checkout.js                  # Checkout process
-│   ├── favourites.js                # Wishlist functionality
-│   ├── profile.js                   # User profile management
-│   ├── search.js                    # Search functionality
-│   └── slider.js                    # Image slider
-├── css/                             # Stylesheets
-│   └── style.css                    # Main stylesheet
-├── images/                          # Product and UI images
-├── *.html                           # HTML pages
-│   ├── index.html                   # Homepage
-│   ├── products.html                # Product listing
-│   ├── men.html                     # Men's category
-│   ├── women.html                   # Women's category
-│   ├── oversized.html               # Oversized category
-│   ├── product-detail.html          # Product detail view
+├── frontend/                        # Static frontend files
+│   ├── css/                         # Stylesheets
+│   │   └── style.css                # Main stylesheet
+│   ├── images/                      # Product and UI images
+│   ├── js/                          # JavaScript files
+│   │   ├── main.js                  # Main app logic
+│   │   ├── auth.js                  # Authentication handler
+│   │   ├── cart.js                  # Shopping cart functionality
+│   │   ├── products.js              # Product listing
+│   │   ├── product-detail.js        # Product detail page
+│   │   ├── checkout.js              # Checkout process
+│   │   ├── favourites.js            # Wishlist functionality
+│   │   ├── profile.js               # User profile management
+│   │   ├── search.js                # Search functionality
+│   │   └── slider.js                # Image slider
+│   ├── add_review.html              # Review submission
 │   ├── cart.html                    # Shopping cart
 │   ├── checkout.html                # Checkout page
+│   ├── favourites.html              # Wishlist page
+│   ├── index.html                   # Homepage
+│   ├── men.html                     # Men's category
+│   ├── oversized.html               # Oversized category
+│   ├── product-detail.html          # Product detail view
+│   ├── products.html                # Product listing
+│   ├── profile.html                 # User profile
 │   ├── signin.html                  # Login page
 │   ├── signup.html                  # Registration page
-│   ├── profile.html                 # User profile
-│   ├── favourites.html              # Wishlist page
-│   ├── add_review.html              # Review submission
-│   └── track-orders.html            # Order tracking
+│   ├── track-orders.html            # Order tracking
+│   └── women.html                   # Women's category
 ├── .gitignore                       # Git ignore file
-└── README.md                        # This file
+├── .hintrc                          # HTML hint configuration
+├── README.md                        # This file
+└── SETUP.md                         # Setup instructions
 ```
 
 ## 🔌 API Endpoints
