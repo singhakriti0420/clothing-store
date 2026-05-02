@@ -1,13 +1,15 @@
 from pathlib import Path
+from decouple import Csv, config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ======================
 # SECURITY
 # ======================
-SECRET_KEY = 'django-insecure-change-this-key'
-DEBUG = True
-ALLOWED_HOSTS = []
+SECRET_KEY = config('SECRET_KEY', default='django-insecure-change-this-key')
+DEBUG = config('DEBUG', default=True, cast=bool)
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='*', cast=Csv())
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # ======================
 # APPS

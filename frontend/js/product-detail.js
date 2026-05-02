@@ -17,6 +17,10 @@ function getLocalImage(name) {
     return localProductImageMap[name] || "images/blacktee1.png.png";
 }
 
+const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://127.0.0.1:8000'
+    : 'https://clothing-store-backend.onrender.com';
+
 document.addEventListener("DOMContentLoaded", async () => {
 
   if (!window.location.href.includes("product-detail.html")) return;
@@ -31,7 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
     // ✅ Fetch single product
-    const res = await fetch(`http://127.0.0.1:8000/api/products/${id}/`);
+    const res = await fetch(`${BACKEND_URL}/api/products/${id}/`);
     const data = await res.json();
 
     const product = {

@@ -1,5 +1,9 @@
 let products = [];
 
+const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://127.0.0.1:8000'
+    : 'https://clothing-store-backend.onrender.com';
+
 const localProductImageMap = {
     "Classic Black T-Shirt": "images/blacktee1.png.png",
     "White Casual Shirt": "images/whitetee.png",
@@ -30,7 +34,7 @@ const category = urlParams.get("category");
    BUILD API URL
 ========================= */
 
-let apiUrl = "http://127.0.0.1:8000/api/products/";
+let apiUrl = `${BACKEND_URL}/api/products/`;
 
 if (category) {
     apiUrl += `?category=${category}`;

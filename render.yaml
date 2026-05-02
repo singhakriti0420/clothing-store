@@ -1,0 +1,17 @@
+services:
+  - type: web_service
+    name: clothing-store-backend
+    env: python
+    plan: free
+    branch: main
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn mysite.wsgi:application --bind 0.0.0.0:$PORT
+
+  - type: static_site
+    name: clothing-store-frontend
+    env: static
+    plan: free
+    branch: main
+    rootDir: .
+    staticPublishPath: frontend/frontend
