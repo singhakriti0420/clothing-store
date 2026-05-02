@@ -20,5 +20,5 @@ services:
     env: static
     plan: free
     branch: main
-    staticPublishPath: frontend/frontend
+    staticPublishPath: frontend
 
