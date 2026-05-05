@@ -1,15 +1,10 @@
-const localProductImageMap = {
-    "Classic Black T-Shirt": "images/blacktee1.png.png",
-    "White Casual Shirt": "images/whitetee.png",
-    "Navy Blue Hoodie": "images/hoodie.png",
-    "Black Denim Jeans": "images/blacktee1.png.png",
-    "Women's White T-Shirt": "images/whitetee.png",
-    "Women's Pink Hoodie": "images/hoodie.png",
+   const localProductImageMap = {
+   "Pink Hoodie": "images/hoodie.png",
     "Women's Black Dress": "images/red-removebg-preview.png",
     "Women's Blue Jeans": "images/whitetee.png",
     "Oversized Brown T-Shirt": "images/brown.png",
     "Oversized Gray Hoodie": "images/graphictee.png",
-    "Oversized Black Sweater": "images/blacktee1.png.png",
+    "Oversized Black Sweater": "images/blacktee1.png",
     "Oversized Beige Shirt": "images/loose shirt.png"
 };
 
@@ -19,7 +14,7 @@ function getLocalImage(name) {
 
 const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://127.0.0.1:8000'
-    : 'https://clothing-store-backend.onrender.com';
+    : 'https://clothing-store-n0f6.onrender.com';
 
 document.addEventListener("DOMContentLoaded", async () => {
 
